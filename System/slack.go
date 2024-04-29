@@ -38,12 +38,12 @@ func run() error {
 	ctx := context.Background()
 
 	// Your Cloud Spanner database information
-	instanceName := "intern2024ft"
-	databaseName := "default"
-	tableName := "sample_table"
+	instanceName := "XXXXXXXXXXXX"
+	databaseName := "XXXXXXXXXXXX"
+	tableName := "XXXXXXXXXXXX"
 
 	// Create a Spanner client
-	client, err := spanner.NewClient(ctx, fmt.Sprintf("projects/%s/instances/%s/databases/%s", "alphaus-live", instanceName, databaseName))
+	client, err := spanner.NewClient(ctx, fmt.Sprintf("XXXXXXXXXXXX", "XXXXXXXXXXXX", instanceName, databaseName))
 	if err != nil {
 		return fmt.Errorf("failed to create client: %v", err)
 	}
@@ -134,7 +134,7 @@ func run() error {
 // sendToSlack sends a message to Slack using the webhook URL
 func sendToSlack(message string) error {
 	// Replace 'YOUR_WEBHOOK_URL' with the actual webhook URL
-	webhookURL := "https://hooks.slack.com/services/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"
+	webhookURL := "XXXXXXXXXXXX"
 
 	// Create a SlackMessage with the text
 	slackMessage := SlackMessage{

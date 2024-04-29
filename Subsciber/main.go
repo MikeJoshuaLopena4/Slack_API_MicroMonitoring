@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	subId  = flag.String("subscription", "Shark-sub", "Subscription name")
+	subId  = flag.String("subscription", "XXXXXX", "Subscription name")
 	ticker = time.NewTicker(1 * time.Minute)
 )
 
@@ -29,7 +29,7 @@ type Message struct {
 // Function to send message to Slack
 func sendToSlack(message string) {
 	// Define your Slack webhook URL
-	webhookURL := "https://hooks.slack.com/services/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"
+	webhookURL := "https://XXXXXX"
 
 	// Create a payload containing the message
 	payload, err := json.Marshal(map[string]string{
@@ -55,7 +55,7 @@ func sendToSlack(message string) {
 }
 func main() {
 	flag.Parse()
-	projectId := "alphaus-live"
+	projectId := "XXXXXX"
 	ctx := context.Background()
 	if *subId == "" {
 		log.Println("subscription cannot be empty")

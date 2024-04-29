@@ -19,10 +19,10 @@ import (
 )
 
 const (
-	projectID  = "alphaus-live"
-	instanceID = "intern2024ft"
-	databaseID = "default"
-	tableName  = "sample_table"
+	projectID  = "XXXXXXXXXXXX"
+	instanceID = "XXXXXXXXXXXX"
+	databaseID = "XXXXXXXXXXXX"
+	tableName  = "XXXXXXXXXXXX"
 	//change according to your credentials
 )
 
@@ -185,7 +185,7 @@ func handleError(w http.ResponseWriter, err error, message string) {
 func fetchData() ([]rowData, error) {
 	// Initialize Spanner client
 	ctx := context.Background()
-	client, err := spanner.NewClient(ctx, fmt.Sprintf("projects/%s/instances/%s/databases/%s", projectID, instanceID, databaseID),
+	client, err := spanner.NewClient(ctx, fmt.Sprintf("XXXXXXXXXXXX", projectID, instanceID, databaseID),
 		option.WithCredentialsFile(`link_to_your_file.json`)) //Replace 'link_to_your_file.json' to your path directory credential
 	if err != nil {
 		return nil, fmt.Errorf("failed to create Spanner client: %v", err)
@@ -274,7 +274,7 @@ func run() error {
 	tableName := "sample_table"
 
 	// Create a Spanner client
-	client, err := spanner.NewClient(ctx, fmt.Sprintf("projects/%s/instances/%s/databases/%s", "alphaus-live", instanceName, databaseName))
+	client, err := spanner.NewClient(ctx, fmt.Sprintf("XXXXXXXXXXXX", "XXXXXXXXXXXX", instanceName, databaseName))
 	if err != nil {
 		return fmt.Errorf("failed to create client: %v", err)
 	}
@@ -365,7 +365,7 @@ func run() error {
 // sendToSlack sends a message to Slack using the webhook URL
 func sendToSlack(message string) error {
 	// Replace 'YOUR_WEBHOOK_URL' with the actual webhook URL
-	webhookURL := "https://hooks.slack.com/services/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"
+	webhookURL := "XXXXXXXXXXXX"
 
 	// Create a SlackMessage with the text
 	slackMessage := SlackMessage{

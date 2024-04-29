@@ -19,8 +19,8 @@ type Data struct {
 
 var services = []string{"AmazonEC2", "Google Cloud", "Azure", "AWS Lambda", "Heroku"}
 
-const projectID = "alphaus-live"
-const topicID = "Shark"
+const projectID = "XXXXXX"
+const topicID = "XXXXXX"
 
 func main() {
 	ctx := context.Background()

@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Octo Team</title>
+    <link rel = "icon" href = "/static/images/logo.svg" 
+        type = "image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+
+    <!--header design-->
+    <div class="header">
+        <div class="logo-container">
+            <img src="/static/images/octopus.png" alt="Octopus" width="30">
+            <a href="/home.html">
+                <img src="/static/images/logo.svg" alt="Octo Logo">
+            </a>    
+        </div>       
+        
+        <nav class="navbar">
+            <a href="/template.html" class="active"> Table </a>
+            <a href="/desc.html"> Description </a>
+            <a href="/team.html"> Team</a>
+        </nav>
+    </div>
+
+
+    <main class="table" id="customers_table">
+
+        <section class="table__header">
+            <i style="color:#a859c06b" class='bx bx-menu' id="menu-icon"></i>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="/static/images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="/static/images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="/static/images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="/static/images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="/static/images/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <tr>
+                    <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Service <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Description <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Cost <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Date <span class="icon-arrow">&UpArrow;</span></th>
+                </tr>
+                {{range .Rows}}
+                <tr>
+                    <td>{{.ID}}</td>
+                    <td>{{.Service}}</td>
+                    <td>{{.Description}}</td>
+                    <td>{{.Cost}}</td>
+                    <td>{{.Date}}</td>
+                </tr>
+                {{end}}
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</body>
+
+</html>

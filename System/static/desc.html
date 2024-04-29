@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Octo Team</title>
+    <link rel="icon" href="/static/images/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+    <!--header design-->
+    <div class="header">
+        <div class="logo-container">
+            <img src="/static/images/octopus.png" alt="Octopus" width="30">
+            <a href="/home.html">
+                <img src="/static/images/logo.svg" alt="Octo Logo">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <a href="/template.html"> Table </a>
+            <a href="/desc.html" class="active"> Description </a>
+            <a href="/team.html"> Team</a>
+        </nav>
+    </div>
+
+
+    <main class="table" id="customers_table">
+        <section class="table__header">
+
+        </section>
+        <section class="table__body">
+            <div class="data-section">
+                <h2>Data Description</h2> </br></br>
+                <div class="data-item">
+                    <span class="label">Longest Description:</span>
+                    <span class="data">{{.LongestDescription}}</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Most Occurring Word:</span>
+                    <span class="data">{{.MostOccurringWord}}</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Least Occurring Word(s):</span>
+                    <span class="data">
+                        {{range .LeastOccurringWords}}
+                            {{.}},
+                        {{end}}
+                    </span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Message Count:</span>
+                    <span class="data">{{.MessageCount}}</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/static/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</body>
+
+</html>
